@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Order Confirmed | Anoopam Ayurveda Pvt. Ltd.</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      h1, h2, h3, h4, .serif {
+        font-family: "Lora", serif;
+      }
+      @keyframes popIn {
+        from { opacity: 0; transform: scale(0.88) translateY(28px); }
+        to   { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      @keyframes checkPop {
+        0%   { transform: scale(0); opacity: 0; }
+        60%  { transform: scale(1.12); opacity: 1; }
+        100% { transform: scale(1); }
+      }
+      .pop-in { animation: popIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+      .check-pop { animation: checkPop 0.5s 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#f4f9f4] text-[#333]">
+
+    <!-- HEADER -->
+    <header class="bg-white/90 backdrop-blur border-b border-green-100 sticky top-0 z-20">
+      <div class="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-2.5 no-underline">
+          <span class="w-9 h-9 rounded-full bg-gradient-to-br from-[#2e7d32] to-[#66bb6a] text-white flex items-center justify-center font-bold text-sm serif">AA</span>
+          <span class="serif font-semibold text-[#1b5e20] text-lg">Anoopam Ayurveda</span>
+        </a>
+        <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-[#444]">
+          <a href="index.html#top" class="hover:text-[#2e7d32]">Home</a>
+          <a href="index.html#products" class="hover:text-[#2e7d32]">Products</a>
+          <a href="index.html#faq" class="hover:text-[#2e7d32]">FAQ</a>
+        </nav>
+        <a href="index.html#buy" class="inline-flex items-center bg-[#2e7d32] hover:bg-[#1b5e20] text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+          Buy Now ₹1,780
+        </a>
+      </div>
+    </header>
+
+    <!-- THANK YOU -->
+    <main class="flex-1 flex items-center justify-center px-4 py-12 md:py-16 bg-gradient-to-br from-[#f4f9f4] via-[#e8f5e8] to-[#f1f8e9]">
+      <div class="pop-in bg-white rounded-[20px] shadow-[0_8px_40px_rgba(0,0,0,0.10)] max-w-[580px] w-full overflow-hidden">
+
+        <div class="h-28 w-full overflow-hidden relative">
+          <img
+            src="https://images.pexels.com/photos/7615621/pexels-photo-7615621.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+            alt="Ayurvedic herbs and natural wellness"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+        </div>
+
+        <div class="px-6 sm:px-12 pb-12 pt-2 text-center -mt-10 relative">
+
+          <div class="check-pop w-[90px] h-[90px] mx-auto mb-6 rounded-full bg-gradient-to-br from-[#2e7d32] to-[#66bb6a] text-white text-[42px] flex items-center justify-center shadow-[0_4px_20px_rgba(46,125,50,0.30)]">
+            🌿
+          </div>
+
+          <h1 class="text-[1.85rem] sm:text-[2rem] text-[#2e7d32] m-0 mb-2.5">Thank You!</h1>
+          <p class="text-[#555] text-base leading-relaxed m-0 mb-7">
+            Your order has been successfully placed.<br />
+            We will call you shortly to confirm your order and payment.
+          </p>
+
+          <!-- ORDER BOX -->
+          <div class="bg-[#f4f9f4] border border-[#c8e6c9] rounded-xl p-5 sm:px-6 text-left mb-7">
+            <p class="m-0 mb-2.5 text-[0.92rem] text-[#444]">
+              📦 <b class="text-[#2e7d32]">Product:</b> Anuarsh Kit of 5
+            </p>
+            <p class="m-0 mb-2.5 text-[0.92rem] text-[#444]">
+              🔢 <b class="text-[#2e7d32]">Quantity:</b>
+              <span id="tyQty">1 kit</span>
+            </p>
+            <p class="m-0 mb-2.5 text-[0.92rem] text-[#444]">
+              💰 <b class="text-[#2e7d32]">Unit price:</b> ₹1,780 per kit
+            </p>
+            <p class="m-0 mb-2.5 text-[0.92rem] text-[#444] flex items-center justify-between gap-3 flex-wrap">
+              <span>🧾 <b class="text-[#2e7d32]">Total amount:</b></span>
+              <span id="tyTotal" class="serif text-[1.35rem] font-bold text-[#1b5e20]">₹1,780</span>
+            </p>
+            <p id="tyCalcRow" class="m-0 mb-2.5 text-[0.82rem] text-[#6b8a6b] hidden">
+              ₹1,780 × <span id="tyCalcQty">1</span> = <span id="tyCalcTotal">₹1,780</span>
+            </p>
+            <p class="m-0 mb-2.5 text-[0.92rem] text-[#444]">
+              🆔 <b class="text-[#2e7d32]">Order ID:</b>
+              <span id="tyOrderId" class="serif font-bold text-[#1b5e20] tracking-wide">—</span>
+            </p>
+            <p class="m-0 text-[0.92rem] text-[#444]">
+              📞 <b class="text-[#2e7d32]">Next step:</b> Our team will call to confirm.
+            </p>
+          </div>
+
+          <!-- STEPS -->
+          <div class="text-left mb-8">
+            <h3 class="text-base text-[#333] m-0 mb-3.5">What happens next?</h3>
+            <div class="flex items-start gap-3.5 mb-3">
+              <div class="w-7 h-7 rounded-full bg-[#2e7d32] text-white text-[0.78rem] font-bold flex items-center justify-center shrink-0 mt-0.5">1</div>
+              <p class="m-0 text-[0.90rem] text-[#555] leading-relaxed">
+                Your kit<span id="tyKitWord"></span> will be <b>dispatched</b> after order confirmation and delivered to your address.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 justify-center flex-wrap">
+            <a href="index.html" class="inline-block min-w-[150px] px-6 py-3 bg-[#2e7d32] hover:bg-[#1b5e20] text-white rounded-lg font-semibold text-[0.95rem] no-underline transition">
+              Back to Home
+            </a>
+            <a href="index.html#buy" class="inline-block min-w-[150px] px-6 py-3 border-2 border-[#2e7d32] text-[#2e7d32] hover:bg-[#2e7d32] hover:text-white rounded-lg font-semibold text-[0.95rem] no-underline transition">
+              Order Another
+            </a>
+          </div>
+
+          <span class="block text-[1.4rem] mt-7 mb-1.5 opacity-60">🌿</span>
+          <p class="text-[0.80rem] text-[#999] leading-relaxed m-0">
+            This information is for educational purposes only and does not replace professional
+            medical advice. Always consult a qualified healthcare professional before starting any
+            Ayurvedic treatment regimen.<br /><br />
+            <b class="text-[#666]">Anoopam Ayurveda Pvt. Ltd.</b> — Rooted in Nature.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1b5e20] text-green-50">
+      <div class="max-w-6xl mx-auto px-5 py-10">
+        <div class="grid sm:grid-cols-2 gap-8 mb-6">
+          <div>
+            <h4 class="text-white text-base mb-2">Anoopam Ayurveda Pvt. Ltd.</h4>
+            <p class="text-green-100/80 text-sm m-0 leading-relaxed">
+              Manufacturer of Ayurvedic proprietary medicines including the Anuarsh range.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white text-base mb-2">Quick links</h4>
+            <div class="flex flex-col gap-1 text-sm">
+              <a href="index.html#details" class="text-green-100/80 hover:text-white no-underline">About Kit</a>
+              <a href="index.html#products" class="text-green-100/80 hover:text-white no-underline">Products</a>
+              <a href="index.html#faq" class="text-green-100/80 hover:text-white no-underline">FAQ</a>
+            </div>
+          </div>
+        </div>
+        <p class="text-green-100/60 text-xs leading-relaxed mb-3">
+          This information is for educational purposes only and does not replace professional
+          medical advice. Always consult a qualified healthcare professional before starting
+          any Ayurvedic treatment regimen.
+        </p>
+        <p class="text-green-100/70 text-xs m-0">© <span id="yr"></span> Anoopam Ayurveda Pvt. Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const UNIT_PRICE = 1780;
+
+      document.getElementById("yr").textContent = new Date().getFullYear();
+
+      function inr(n) {
+        return "₹" + Number(n).toLocaleString("en-IN");
+      }
+
+      function parseQty(value) {
+        const n = parseInt(value, 10);
+        return Number.isFinite(n) && n > 0 ? n : null;
+      }
+
+      // Order details saved by js/script.js when the order was placed
+      function readStoredOrder() {
+        const keys = ["anuarsh_order", "lastOrder", "order", "checkoutOrder", "anoopamOrder"];
+        for (const key of keys) {
+          try {
+            const raw = sessionStorage.getItem(key) || localStorage.getItem(key);
+            if (!raw) continue;
+            const data = JSON.parse(raw);
+            if (data && typeof data === "object") return data;
+          } catch (e) {}
+        }
+        return null;
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const urlOrderId = params.get("order_id") || params.get("orderId") || params.get("id");
+
+      let stored = readStoredOrder() || {};
+      // Ignore saved details that belong to a different order
+      if (urlOrderId && stored.id && String(stored.id) !== String(urlOrderId)) stored = {};
+
+      const orderId = urlOrderId || stored.order_id || stored.orderId || stored.id || "";
+
+      const qty =
+        parseQty(params.get("qty")) ||
+        parseQty(params.get("quantity")) ||
+        parseQty(params.get("kits")) ||
+        parseQty(stored.qty) ||
+        parseQty(stored.quantity) ||
+        parseQty(stored.kits) ||
+        1;
+
+      const passedTotal =
+        parseQty(params.get("total")) ||
+        parseQty(params.get("amount")) ||
+        parseQty(stored.total) ||
+        parseQty(stored.amount);
+
+      const total = passedTotal && passedTotal >= UNIT_PRICE ? passedTotal : UNIT_PRICE * qty;
+
+      if (orderId) {
+        document.getElementById("tyOrderId").textContent = orderId;
+      }
+
+      document.getElementById("tyQty").textContent = qty === 1 ? "1 kit" : qty + " kits";
+      document.getElementById("tyTotal").textContent = inr(total);
+      document.getElementById("tyKitWord").textContent = qty > 1 ? "s" : "";
+
+      if (qty > 1) {
+        document.getElementById("tyCalcRow").classList.remove("hidden");
+        document.getElementById("tyCalcQty").textContent = String(qty);
+        document.getElementById("tyCalcTotal").textContent = inr(UNIT_PRICE * qty);
+      }
+    </script>

@@ -1,0 +1,7 @@
+SETUP (PHP + MySQL hosting / cPanel)
+1. cPanel > MySQL Databases: create a database + a user, give the user ALL privileges.
+2. phpMyAdmin: select the database > Import > choose database.sql.
+3. Open api/config.php and fill DB_NAME, DB_USER, DB_PASS and ADMIN_PASS (your admin password).
+4. Upload everything (index.html, css, js, images, api, admin) to public_html.
+5. Website: yourdomain.com   Admin: yourdomain.com/admin/   (user: admin)
+Note: the order form only works on the hosting (PHP), not by double-clicking index.html.

@@ -1,0 +1,14 @@
+
+# Database credentials
+api/config.php
+.env
+.env.*
+
+# Testing files
+api/dbtest.php
+api/test.php
+api/shipfigo-test.php
+
+# System files
+.DS_Store
+Thumbs.db
